@@ -8,6 +8,7 @@ f.close()
 f = open(filepath, 'r')
 print(f.read(4))
 print(f.read())
+f.close()
 
 f = open(filepath, 'w')
 f.truncate(0)  # clear file
@@ -18,10 +19,17 @@ f.close()
 
 f = open(filepath, 'r')
 print(f.read())
+f.close()
 
 f = open(filepath, 'r')
 f.read(3)
 f.read(2)
 print(f.tell())
+f.close()
 
-# try to change
+# like using syntax in .NET
+with open(filepath, 'w') as f:
+    f.writelines('last line of file')
+
+
+
